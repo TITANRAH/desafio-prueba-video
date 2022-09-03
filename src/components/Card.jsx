@@ -20,7 +20,7 @@ function Card({ name, imagen, genero, status, created, species }) {
             Creado el: {""}
             <Moment format="DD/MM/YYYY">{created}</Moment>
           </p>
-          <p className="card-text">Status: {species}</p>
+          <p className="card-text">Especie: {species}</p>
         </div>
       </div>
     </>
