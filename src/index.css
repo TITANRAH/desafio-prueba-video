@@ -8,7 +8,36 @@ body {
   margin: 0.5rem;
 }
 
+.not-found {
+  text-align: center;
+}
 
+.not-found h6 {
+  font-size: 6rem;
+  color: #b3e7c6;
+}
+
+button {
+  font-size: 2rem !important;
+  background-color: #003f17 !important;
+  color: #b3e7c6 !important;
+  padding: 0 2rem 0 2rem !important;
+  border-radius: 8% !important;
+  width: 10%;
+  box-shadow: 1rem 1rem black;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005b22 !important;
+  box-shadow: 1rem 1rem black;
+}
+
+.boton-orden {
+  text-align: center;
+  font-size: 2rem;
+  color: #b3e7c6;
+}
 
 .busqueda {
   display: flex;
@@ -17,17 +46,16 @@ body {
   margin: auto;
 }
 
-
-
-.card-header, .card-footer{
+.card-header,
+.card-footer {
   background-color: #b3e7c6;
 }
 
-.card{
+.card {
   font-size: 1.5rem;
 }
 
-.card h5{
+.card h5 {
   font-size: 1.6rem;
 }
 
@@ -42,12 +70,12 @@ body {
   padding: 2rem;
 }
 
-.busqueda input{
-  font-size: 2rem ;
+.busqueda input {
+  font-size: 2rem;
 }
 
-.busqueda label{
-  font-size: 2rem ;
+.busqueda label {
+  font-size: 2rem;
   color: #b3e7c6;
 }
 
@@ -63,12 +91,11 @@ body {
   font-weight: 800;
 }
 
-.footer{
+.footer {
   text-align: center;
- 
 }
 
-.footer img{
+.footer img {
   width: 100%;
 }
 
@@ -112,14 +139,36 @@ body {
   padding-left: 1rem;
 }
 
-
-
 .contenedor-card {
   display: flex;
   flex-direction: row;
-  width: 95% ;
+  width: 95%;
   margin: auto;
   flex-wrap: wrap;
   justify-content: center;
+}
 
+@media (max-width: 600px) {
+  button {
+    font-size: 2rem !important;
+    background-color: #003f17 !important;
+    color: #b3e7c6 !important;
+    padding: 0 2rem 0 2rem !important;
+    border-radius: 8% !important;
+    width: 40%;
+    box-shadow: 1rem 1rem black;
+    cursor: pointer;
+  }
+
+  .busqueda {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+
+  .busqueda label {
+    font-size: 1.5rem;
+    color: #b3e7c6;
+  }
 }

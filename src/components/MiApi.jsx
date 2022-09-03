@@ -2,7 +2,8 @@ import Card from "./Card";
 import Busqueda from "./Busqueda";
 import { useState, useEffect } from "react";
 import Footer from "./Footer";
-
+import BotonOrden from "./BotonOrden";
+import NoHayResultados from "./NoHayResultados";
 
 function MiApi() {
   const baseUrl = "https://rickandmortyapi.com/api/character";
@@ -10,6 +11,7 @@ function MiApi() {
   const [respuesta, setRespuesta] = useState([]);
   const [filtro, setFiltro] = useState("");
   const [filtroPorGenero, setFiltroPorGenero] = useState("");
+  const [ordenAz, setOrdenAz] = useState([]);
 
   useEffect(() => {
     const fetchDatos = async () => {
@@ -17,6 +19,7 @@ function MiApi() {
       const respDatos = await resp.json();
 
       setRespuesta(respDatos.results);
+      setOrdenAz(respDatos.results);
     };
 
     fetchDatos();
@@ -33,8 +36,7 @@ function MiApi() {
       const resp = await fetch(urlFiltro);
       const respDatos = await resp.json();
 
-      console.log(respDatos.results);
-      setRespuesta(respDatos.results);
+      setRespuesta(respDatos.results ? respDatos.results : []);
     };
 
     fetchDatos();
@@ -51,45 +53,40 @@ function MiApi() {
       const resp = await fetch(urlFiltro);
       const respDatos = await resp.json();
 
-      console.log(respDatos.results);
-      setRespuesta(respDatos.results);
+      setRespuesta(respDatos.results ? respDatos.results : []);
     };
 
     fetchDatos();
   }, [filtroPorGenero]);
 
-  // console.log(filtro);
-  // console.log("FILTRO POR GENERO", filtroPorGenero);
   return (
     <>
+      <BotonOrden setRespuesta={setRespuesta} ordenAz={ordenAz} />
 
       <Busqueda setFiltro={setFiltro} setFiltroPorGenero={setFiltroPorGenero} />
 
-   
+      {respuesta.length > 0 ? (
         <div className="contenedor-card">
-
-        {respuesta.map(
-          ({ name, url, image, id, gender, status, created, species }) => (
-            
-            <Card
-          
-              url={url}
-              key={id}
-              imagen={image}
-              name={name}
-              genero={gender}
-              status={status}
-              created={created}
-              species={species}
-            />
-          )
-        )}
+          {respuesta.map(
+            ({ name, url, image, id, gender, status, created, species }) => (
+              <Card
+                url={url}
+                key={id}
+                imagen={image}
+                name={name}
+                genero={gender}
+                status={status}
+                created={created}
+                species={species}
+              />
+            )
+          )}
         </div>
+      ) : (
+        <NoHayResultados/>
+      )}
 
-
-            <Footer/>
-
-     
+      <Footer />
     </>
   );
 }
