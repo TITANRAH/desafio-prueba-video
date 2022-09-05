@@ -1,5 +1,5 @@
 import Moment from "react-moment";
-import Header from "./Header";
+
 
 function Card({ name, imagen, genero, status, created, species }) {
   return (

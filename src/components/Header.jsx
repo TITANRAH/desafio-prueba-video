@@ -13,8 +13,7 @@ function Header({ texto, children }) {
                   key={i}
                   style={{
                     transform: `rotate(${totalLetras * i}deg)`,
-                  }}
-                >
+                  }}>
                   {letra}
                 </span>
               ))}
