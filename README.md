@@ -5,6 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 LINK VIDEO PRUEBA [https://www.youtube.com/watch?v=zN24LqSQ208] (https://www.youtube.com/watch?v=zN24LqSQ208) 
 
+LINK DE PAGE EN NETLIFY [https://inspiring-malabi-1c1444.netlify.app/](https://inspiring-malabi-1c1444.netlify.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
